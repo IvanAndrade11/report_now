@@ -18,6 +18,10 @@ h3 {
  border-radius: 1rem;   
 }
 
+input:focus {
+    color: white !important;
+}
+
 .myform {
     position: relative;
     display: -ms-flexbox;
@@ -80,8 +84,4 @@ h3 {
 
 form .error {
     color: #ff0000;
-}
-
-#second {
-    display: none;
 }
