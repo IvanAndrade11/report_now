@@ -1,0 +1,120 @@
+a {
+  color: #fff;
+}
+
+.loggin-container {
+  width: 98%;
+  margin: 0 auto;
+}
+
+.loggin-container-logo {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.loggin-container-logo img {
+  border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+  .loggin-container-logo img {
+    width: 85%;
+  }
+}
+
+.loggin-container-form {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.loggin-container-form h1{
+  font-size: 4rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.loggin-container-form form button {
+  width: 90%;
+  height: 5rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 2rem;
+}
+
+.loggin-container-form-input {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Style the form icons */
+.loggin-container-form-input-icon {
+  padding: 10px;
+  margin-right: 1rem;
+  background: dodgerblue;
+  color: white;
+  width: 7%;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+/* Style the input fields */
+.input-field {
+  font-size: 1.5rem;
+  width: 70%;
+  height: 2rem;
+  padding: 10px;
+  border: none;
+  background-color: #333333;
+  border-radius: 1rem;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.loggin-container-accounts {
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loggin-container-accounts button {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 2rem;
+  width: 44%;
+  height: 4rem;
+  font-size: 1.2rem;
+}
+
+.loggin-container-regiter-text {
+  width: 80%;
+  text-align: center;
+  margin: 1.5rem auto;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.2rem;
+}
