@@ -35,7 +35,7 @@ a {
 }
 
 .loggin-container-form form button {
-  background-color: #1E90FF;
+  background-color: #1e90ff;
   width: 80%;
   height: 5rem;
   margin-top: 1rem;
@@ -46,8 +46,8 @@ a {
   border: none;
 }
 
-.loggin-container-form form button:hover{
-  background-color: #0074FF;
+.loggin-container-form form button:hover {
+  background-color: #0074ff;
 }
 
 @media (max-width: 768px) {
@@ -66,7 +66,7 @@ a {
 .loggin-container-form-input-icon {
   padding: 10px;
   margin-right: 1rem;
-  background: #1E90FF;
+  background: #1e90ff;
   color: white;
   width: 7%;
   text-align: center;
@@ -85,7 +85,7 @@ a {
 }
 
 .input-field:focus {
-  border: 2px solid #1E90FF;
+  border: 2px solid #1e90ff;
 }
 
 .btn:hover {

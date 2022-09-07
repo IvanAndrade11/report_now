@@ -35,7 +35,8 @@ a {
 }
 
 .loggin-container-form form button {
-  background-color: #1E90FF;
+  background-color: #1e90ff;
+  color: #fff;
   width: 80%;
   height: 5rem;
   margin-top: 1rem;
@@ -52,21 +53,34 @@ a {
   }
 }
 
-.loggin-container-form form button:hover{
-  background-color: #0074FF;
+.loggin-container-form form button:hover {
+  background-color: #0074ff;
 }
 
-.loggin-container-form-input {
+.login-container-form-input {
+  margin-bottom: 2rem;
+}
+
+.alert_danger {
+  color: #550101;
+  width: 78%;
+  background-color: #F9A2A2;
+  font-weight: bold;
+  margin: .3rem auto;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.login-container-form-input-field {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
 }
 
 /* Style the form icons */
 .loggin-container-form-input-icon {
   padding: 10px;
-  margin-right: 1rem;
-  background: #1E90FF;
+  margin-right: .2rem;
+  background: #1e90ff;
   color: white;
   width: 7%;
   text-align: center;
@@ -85,7 +99,7 @@ a {
 }
 
 .input-field:focus {
-  border: 2px solid #1E90FF;
+  border: 2px solid #1e90ff;
 }
 
 .btn:hover {

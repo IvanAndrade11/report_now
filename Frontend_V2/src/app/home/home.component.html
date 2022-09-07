@@ -4,28 +4,38 @@
   </div>
   <div class="loggin-container-form">
     <h1>Report Now</h1>
-    <form action="">
-      <div class="loggin-container-form-input">
-        <i class="fa-solid fa-user fa-2x loggin-container-form-input-icon"></i>
-        <input
-          class="input-field"
-          type="text"
-          placeholder="Ingrese su usuario"
-          name="email"
-        />
+    <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" action="">
+      <div class="login-container-form-input">
+        <div class="login-container-form-input-field">
+          <i class="fa-solid fa-user fa-2x loggin-container-form-input-icon"></i>
+          <input
+            class="input-field"
+            type="text"
+            placeholder="Ingrese su usuario"
+            name="email"
+            formControlName="email"
+            required
+          />
+        </div>
+        <div class="alert_danger" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['required']">Este campo es requerido</div>
       </div>
 
-      <div class="loggin-container-form-input">
-        <i class="fa fa-key fa-2x loggin-container-form-input-icon"></i>
-        <input
-          class="input-field"
-          type="password"
-          placeholder="Ingrese su contraseña"
-          name="psw"
-        />
+
+      <div class="login-container-form-input">
+        <div class="login-container-form-input-field">
+          <i class="fa fa-key fa-2x loggin-container-form-input-icon"></i>
+          <input
+            class="input-field"
+            type="password"
+            formControlName="password"
+            placeholder="Ingrese su contraseña"
+            name="password"
+          />
+        </div>
+        <div class="alert alert_danger" *ngIf="contactForm.get('password')?.touched && contactForm.get('password')?.errors?.['required']">Este campo es requerido</div>
       </div>
 
-      <button type="submit">Iniciar Sesión</button>
+      <button type="submit" [disabled]="contactForm.invalid">Iniciar Sesión</button>
     </form>
   </div>
   <div class="loggin-container-accounts">
