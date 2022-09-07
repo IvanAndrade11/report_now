@@ -35,19 +35,25 @@ a {
 }
 
 .loggin-container-form form button {
-  background-color: dodgerblue;
+  background-color: #1E90FF;
   width: 80%;
   height: 5rem;
   margin-top: 1rem;
   font-size: 1.5rem;
   font-weight: bold;
   border-radius: 2rem;
+  cursor: pointer;
+  border: none;
 }
 
 @media (max-width: 768px) {
   .loggin-container-form form button {
     width: 90%;
   }
+}
+
+.loggin-container-form form button:hover{
+  background-color: #0074FF;
 }
 
 .loggin-container-form-input {
@@ -60,7 +66,7 @@ a {
 .loggin-container-form-input-icon {
   padding: 10px;
   margin-right: 1rem;
-  background: dodgerblue;
+  background: #1E90FF;
   color: white;
   width: 7%;
   text-align: center;
@@ -79,7 +85,7 @@ a {
 }
 
 .input-field:focus {
-  border: 2px solid dodgerblue;
+  border: 2px solid #1E90FF;
 }
 
 .btn:hover {
