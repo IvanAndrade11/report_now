@@ -37,6 +37,7 @@ a {
 .loggin-container-form form button {
   background-color: #1e90ff;
   width: 80%;
+  color: #fff;
   height: 5rem;
   margin-top: 1rem;
   font-size: 1.5rem;
@@ -56,10 +57,23 @@ a {
   }
 }
 
-.loggin-container-form-input {
+.login-container-form-input {
+  margin-bottom: 2rem;
+}
+
+.alert_danger {
+  color: #550101;
+  width: 78%;
+  background-color: #f9a2a2;
+  font-weight: bold;
+  margin: 0.3rem auto;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.login-container-form-input-field {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
 }
 
 /* Style the form icons */

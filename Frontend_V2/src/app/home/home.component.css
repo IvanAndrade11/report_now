@@ -64,9 +64,9 @@ a {
 .alert_danger {
   color: #550101;
   width: 78%;
-  background-color: #F9A2A2;
+  background-color: #f9a2a2;
   font-weight: bold;
-  margin: .3rem auto;
+  margin: 0.3rem auto;
   padding: 1rem;
   border-radius: 1rem;
 }
@@ -79,7 +79,7 @@ a {
 /* Style the form icons */
 .loggin-container-form-input-icon {
   padding: 10px;
-  margin-right: .2rem;
+  margin-right: 0.2rem;
   background: #1e90ff;
   color: white;
   width: 7%;
