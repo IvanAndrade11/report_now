@@ -6,9 +6,15 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { HomeComponent } from './home/home.component'
 import { RegisterComponent } from './register/register.component'
+import { ValidateOtpComponent } from './validate-otp/validate-otp.component'
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, RegisterComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    RegisterComponent,
+    ValidateOtpComponent
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   exports: [FormsModule, ReactiveFormsModule],
   providers: [],
