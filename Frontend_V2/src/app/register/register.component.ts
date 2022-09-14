@@ -22,10 +22,8 @@ export class RegisterComponent implements OnInit {
     this.contactForm = this.initForm()
   }
 
-  onSubmit(param: FormGroupDirective): void {
-    alert('SISISI')
-    console.log(param)
-    //this.router.navigateByUrl("validate-otp")
+  onSubmit(): void {
+    this.router.navigateByUrl("validate-otp")
   }
 
   quierocomer() {
