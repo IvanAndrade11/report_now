@@ -7,13 +7,15 @@ import { AppComponent } from './app.component'
 import { HomeComponent } from './home/home.component'
 import { RegisterComponent } from './register/register.component'
 import { ValidateOtpComponent } from './validate-otp/validate-otp.component'
+import { RestorePasswordComponent } from './restore-password/restore-password.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    ValidateOtpComponent
+    ValidateOtpComponent,
+    RestorePasswordComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   exports: [FormsModule, ReactiveFormsModule],
