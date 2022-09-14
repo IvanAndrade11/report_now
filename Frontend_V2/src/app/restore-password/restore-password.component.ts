@@ -1,9 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators
-} from '@angular/forms'
+import { Component, OnInit } from '@angular/core'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-restore-password',
@@ -27,5 +23,4 @@ export class RestorePasswordComponent implements OnInit {
       email: ['', [Validators.email, Validators.required]]
     })
   }
-
 }

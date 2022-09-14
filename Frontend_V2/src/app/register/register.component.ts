@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.router.navigateByUrl("validate-otp")
+    this.router.navigateByUrl('validate-otp')
   }
 
   quierocomer() {
