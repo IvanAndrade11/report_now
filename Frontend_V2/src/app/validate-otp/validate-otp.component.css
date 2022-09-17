@@ -43,9 +43,9 @@ a {
 
 .loggin-container-form form button {
   background-color: #1e90ff;
-  width: 80%;
+  width: 20%;
   color: #fff;
-  height: 5rem;
+  height: 3.5rem;
   margin-top: 1rem;
   font-size: 1.5rem;
   font-weight: bold;
@@ -120,8 +120,6 @@ a {
   margin: 0 auto;
   width: 70%;
   margin-top: 2rem;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -137,7 +135,7 @@ a {
   color: #fff;
   font-weight: bold;
   border-radius: 2rem;
-  width: 44%;
+  width: 85%;
   height: 4rem;
   font-size: 1.2rem;
 }
