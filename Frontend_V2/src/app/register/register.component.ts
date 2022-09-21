@@ -23,12 +23,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.router.navigateByUrl('validate-otp')
-  }
-
-  quierocomer() {
-    alert('SISISI')
-    console.log('SISISI')
+    this.router.navigate(['validate-otp'])
   }
 
   initForm(): FormGroup {

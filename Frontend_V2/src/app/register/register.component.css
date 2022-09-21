@@ -71,6 +71,12 @@ a {
   border-radius: 1rem;
 }
 
+@media (max-width: 768px) {
+  .alert_danger {
+    width: 80%;
+  }
+}
+
 .login-container-form-input-field {
   display: flex;
   justify-content: center;
