@@ -1,0 +1,148 @@
+a {
+  color: #fff;
+}
+
+.loggin-container {
+  width: 98%;
+  margin: 0 auto;
+}
+
+.loggin-container-logo {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.loggin-container-logo img {
+  border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+  .loggin-container-logo img {
+    width: 60%;
+  }
+}
+
+.loggin-container-form {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.loggin-container-form h1 {
+  font-size: 4rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.loggin-container-form form button {
+  background-color: #1e90ff;
+  width: 80%;
+  color: #fff;
+  height: 5rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 2rem;
+  cursor: pointer;
+  border: none;
+}
+
+.loggin-container-form form button:hover {
+  background-color: #0074ff;
+}
+
+@media (max-width: 768px) {
+  .loggin-container-form form button {
+    width: 90%;
+  }
+}
+
+.login-container-form-input {
+  margin-bottom: 2rem;
+}
+
+.alert_danger {
+  color: #550101;
+  width: 78%;
+  background-color: #f9a2a2;
+  font-weight: bold;
+  margin: 0.3rem auto;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+  .alert_danger {
+    width: 80%;
+  }
+}
+
+.login-container-form-input-field {
+  display: flex;
+  justify-content: center;
+}
+
+/* Style the form icons */
+.loggin-container-form-input-icon {
+  padding: 10px;
+  margin-right: 1rem;
+  background: #1e90ff;
+  color: white;
+  width: 7%;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+/* Style the input fields */
+.input-field {
+  font-size: 1.5rem;
+  width: 70%;
+  height: 2rem;
+  padding: 10px;
+  border: none;
+  background-color: #333333;
+  border-radius: 1rem;
+}
+
+.input-field:focus {
+  border: 2px solid #1e90ff;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.loggin-container-accounts {
+  margin: 0 auto;
+  width: 70%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .loggin-container-accounts {
+    width: 80%;
+  }
+}
+
+.loggin-container-accounts button {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 2rem;
+  width: 44%;
+  height: 4rem;
+  font-size: 1.2rem;
+}
+
+.loggin-container-regiter-text {
+  width: 80%;
+  text-align: center;
+  margin: 1.5rem auto;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.2rem;
+}

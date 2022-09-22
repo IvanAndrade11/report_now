@@ -1,0 +1,51 @@
+<div class="loggin-container">
+  <div class="loggin-container-logo">
+    <img src="../../assets/img/logo.jpeg" alt="Logo rReport Now" />
+  </div>
+  <div class="loggin-container-form">
+    <h1>Validación de OTP</h1>
+    <p>Ingresa el código de 4 dígitos que acaba de llegar a tu teléfono</p>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="login-container-form-input">
+        <div class="login-container-form-input-field">
+          <input
+            class="input-field"
+            type="number"
+            name="otp"
+            onKeyUp="if(this.value>9){this.value='';alert('Ingrese solo un dígito');}else if(this.value<0){this.value='';}"
+            formControlName="number1"
+            required
+          />
+          <input
+            class="input-field"
+            type="number"
+            name="otp"
+            onKeyUp="if(this.value>9){this.value='';alert('Ingrese solo un dígito');}else if(this.value<0){this.value='';}"
+            formControlName="number2"
+            required
+          />
+          <input
+            class="input-field"
+            type="number"
+            name="otp"
+            onKeyUp="if(this.value>9){this.value='';alert('Ingrese solo un dígito');}else if(this.value<0){this.value='';}"
+            formControlName="number3"
+            required
+          />
+          <input
+            class="input-field"
+            type="number"
+            name="otp"
+            onKeyUp="if(this.value>9){this.value='';alert('Ingrese solo un dígito');}else if(this.value<0){this.value='';}"
+            formControlName="number4"
+            required
+          />
+        </div>
+      </div>
+      <button type="submit" [disabled]="contactForm.invalid">Validar</button>
+    </form>
+    <div class="loggin-container-accounts">
+      <button><a routerLink="">Cancelar Registro</a></button>
+    </div>
+  </div>
+</div>

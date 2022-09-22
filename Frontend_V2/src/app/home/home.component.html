@@ -1,0 +1,67 @@
+<div class="loggin-container">
+  <div class="loggin-container-logo">
+    <img src="../../assets/img/logo.jpeg" alt="Logo rReport Now" />
+  </div>
+  <div class="loggin-container-form">
+    <h1>Report Now</h1>
+    <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+      <div class="login-container-form-input">
+        <div class="login-container-form-input-field">
+          <i
+            class="fa-solid fa-user fa-2x loggin-container-form-input-icon"
+          ></i>
+          <input
+            class="input-field"
+            type="text"
+            placeholder="Ingrese su usuario"
+            name="email"
+            formControlName="email"
+            required
+          />
+        </div>
+        <div
+          class="alert_danger"
+          *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['required']"
+        >
+          Este campo es requerido
+        </div>
+      </div>
+
+      <div class="login-container-form-input">
+        <div class="login-container-form-input-field">
+          <i class="fa fa-key fa-2x loggin-container-form-input-icon"></i>
+          <input
+            class="input-field"
+            type="password"
+            formControlName="password"
+            placeholder="Ingrese su contraseña"
+            name="password"
+          />
+        </div>
+        <div
+          class="alert alert_danger"
+          *ngIf="contactForm.get('password')?.touched && contactForm.get('password')?.errors?.['required']"
+        >
+          Este campo es requerido
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="contactForm.invalid">
+        <a routerLink="/user-home">Iniciar Sesión</a>
+      </button>
+    </form>
+    <div class="loggin-container-regiter-text">
+      <b
+        >¿Olvidaste tu contraseña?
+        <a routerLink="/restablecer">Restablecer</a></b
+      >
+    </div>
+  </div>
+  <div class="loggin-container-accounts">
+    <button>Google</button>
+    <button>Apple ID</button>
+  </div>
+  <div class="loggin-container-regiter-text">
+    <b>¿No estas registrado? <a routerLink="/registro">Registrate</a></b>
+  </div>
+</div>
