@@ -1,0 +1,22 @@
+{
+  "name": "backend-report-now",
+  "version": "1.0.0",
+  "description": "This proyect was created by Iván Andrade and Giovanni Baquero for class of programming last semester",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanAndrade11/report_now.git"
+  },
+  "keywords": [
+    "backend"
+  ],
+  "author": "Iván Andrade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanAndrade11/report_now/issues"
+  },
+  "homepage": "https://github.com/IvanAndrade11/report_now#readme"
+}

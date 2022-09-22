@@ -54,7 +54,11 @@ a {
 }
 
 .loggin-container-form form button:hover {
-  background-color: #0074ff;
+  background-color: #0074ff;  
+}
+
+.loggin-container-form form button a:hover {
+  text-decoration: none;
 }
 
 .login-container-form-input {
