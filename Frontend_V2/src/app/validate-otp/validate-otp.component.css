@@ -30,9 +30,10 @@ a {
 }
 
 .loggin-container-form h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #fff;
   font-weight: bold;
+  margin: 2rem 0rem;
 }
 
 .loggin-container-form p {
@@ -98,9 +99,8 @@ a {
 /* Style the input fields */
 .input-field {
   font-size: 1.5rem;
-  width: 10%;
+  width: 20%;
   margin: 0 1rem;
-  height: 2rem;
   padding: 10px;
   border: none;
   background-color: #333333;
