@@ -54,7 +54,7 @@ a {
 }
 
 .loggin-container-form form button:hover {
-  background-color: #0074ff;  
+  background-color: #0074ff;
 }
 
 .loggin-container-form form button a:hover {
@@ -78,6 +78,7 @@ a {
 .login-container-form-input-field {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* Style the form icons */
@@ -96,7 +97,6 @@ a {
 .input-field {
   font-size: 1.5rem;
   width: 70%;
-  height: 2rem;
   padding: 10px;
   border: none;
   background-color: #333333;
@@ -123,6 +123,10 @@ a {
 @media (max-width: 768px) {
   .loggin-container-accounts {
     width: 80%;
+  }
+
+  .loggin-container-form-input-icon {
+    width: auto;
   }
 }
 
