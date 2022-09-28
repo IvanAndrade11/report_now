@@ -22,10 +22,19 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.toastr.success('', 'Bienvenido', {
-      timeOut: 5000
-    })
-    this.router.navigate(['user-home'])
+    if (
+      this.contactForm.value.email === '' ||
+      this.contactForm.value.password === ''
+    ) {
+      this.toastr.error('', 'Complete todos los campos', {
+        timeOut: 5000
+      })
+    } else {
+      this.toastr.success('', 'Bienvenido', {
+        timeOut: 5000
+      })
+      this.router.navigate(['user-home'])
+    }
   }
 
   initForm(): FormGroup {
