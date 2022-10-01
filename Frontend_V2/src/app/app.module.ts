@@ -10,7 +10,10 @@ import { HomeComponent } from './home/home.component'
 import { RegisterComponent } from './register/register.component'
 import { ValidateOtpComponent } from './validate-otp/validate-otp.component'
 import { RestorePasswordComponent } from './restore-password/restore-password.component'
-import { UserHomeComponent } from './user-home/user-home.component'
+import { UserHomeComponent } from './user-home/user-home.component';
+import { NoticeComponent } from './notice/notice.component';
+import { NewNoticeComponent } from './new-notice/new-notice.component';
+import { NavbarComponent } from './utils/navbar/navbar.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { UserHomeComponent } from './user-home/user-home.component'
     RegisterComponent,
     ValidateOtpComponent,
     RestorePasswordComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    NoticeComponent,
+    NewNoticeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
