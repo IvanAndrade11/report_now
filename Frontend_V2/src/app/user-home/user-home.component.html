@@ -37,68 +37,22 @@
 <h1>TOP VERIFICADAS</h1>
 
 <div class="notice-cards">
-  <div class="notice-card">
-    <h3>Titulo Noticia</h3>
+  <div class="notice-card" *ngFor="let notice of noticesArray">
+    <h3>{{notice.titulo}}</h3>
     <div class="notice-photo">
-      <img
-        src="../../assets/img/17010.jpg"
-        alt="Foto de la noticia"
-        class="img-fluid rounded d-block m-l-none"
-      />
+      <a routerLink="notice">
+        <img
+          src="../../assets/img/17010.jpg"
+          alt="Foto de la noticia"
+          class="img-fluid rounded d-block m-l-none"
+        />
+      </a>
     </div>
     <div class="notice-buttons">
-      <button class="btn btn-primary">
+      <button class="btn btn-primary" (click)="onVerify()">
         <i class="fa-solid fa-check"></i>Verificar
       </button>
-      <p>1234 Verificados</p>
-    </div>
-  </div>
-  <div class="notice-card">
-    <h3>Titulo Noticia</h3>
-    <div class="notice-photo">
-      <img
-        src="../../assets/img/17010.jpg"
-        alt="Foto de la noticia"
-        class="img-fluid rounded d-block m-l-none"
-      />
-    </div>
-    <div class="notice-buttons">
-      <button class="btn btn-primary">
-        <i class="fa-solid fa-check"></i>Verificar
-      </button>
-      <p>1234 Verificados</p>
-    </div>
-  </div>
-  <div class="notice-card">
-    <h3>Titulo Noticia</h3>
-    <div class="notice-photo">
-      <img
-        src="../../assets/img/17010.jpg"
-        alt="Foto de la noticia"
-        class="img-fluid rounded d-block m-l-none"
-      />
-    </div>
-    <div class="notice-buttons">
-      <button class="btn btn-primary">
-        <i class="fa-solid fa-check"></i>Verificar
-      </button>
-      <p>1234 Verificados</p>
-    </div>
-  </div>
-  <div class="notice-card">
-    <h3>Titulo Noticia</h3>
-    <div class="notice-photo">
-      <img
-        src="../../assets/img/17010.jpg"
-        alt="Foto de la noticia"
-        class="img-fluid rounded d-block m-l-none"
-      />
-    </div>
-    <div class="notice-buttons">
-      <button class="btn btn-primary">
-        <i class="fa-solid fa-check"></i>Verificar
-      </button>
-      <p>1234 Verificados</p>
+      <p>{{notice.likes}} Verificados</p>
     </div>
   </div>
 </div>
