@@ -37,6 +37,27 @@
       <div class="login-container-form-input">
         <div class="login-container-form-input-field">
           <i
+            class="fa-solid fa-signature fa-2x loggin-container-form-input-icon"
+          ></i>
+          <input
+            class="input-field"
+            type="text"
+            placeholder="Ingrese su nombre"
+            name="name"
+            formControlName="name"
+          />
+        </div>
+        <div
+          class="alert_danger"
+          *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.errors?.['required']"
+        >
+          Este campo es requerido
+        </div>
+      </div>
+
+      <div class="login-container-form-input">
+        <div class="login-container-form-input-field">
+          <i
             class="fa-solid fa-envelope fa-2x loggin-container-form-input-icon"
           ></i>
           <input
