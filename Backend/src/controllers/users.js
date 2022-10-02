@@ -1,4 +1,3 @@
-import { query } from 'express';
 import { sql } from '../bd.js';
 import { existUser, validateInfoUser } from '../utils/validations.js'; 
 

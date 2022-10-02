@@ -11,11 +11,5 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 
 app.use("/api/users", routerUsers);
 
-// app.get('/listUsers', async (req, res) => {
-//     const [ rows ] = await sql.query('SELECT * from users');
-//     console.log(rows);
-//     res.json(rows);
-// })
-
 app.listen(PORT);
 console.log(`RUN SERVER IN PORT ${PORT}`);
