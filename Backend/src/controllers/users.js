@@ -12,6 +12,10 @@ const controller = {
             if(await existUser(id)){
                 const user = await sql.query(`SELECT * FROM users WHERE id = ${id}`);
                 res.status(200).json(user[0]);
+            }else{
+                res.status(500).json({
+                    error: `El usuario con id ${id} no existe.`,
+                })
             }
         }else{
             res.status(500).json({
