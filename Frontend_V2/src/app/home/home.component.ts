@@ -22,11 +22,12 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (
-      this.contactForm.value.email === '' ||
-      this.contactForm.value.password === ''
-    ) {
-      this.toastr.error('', 'Complete todos los campos', {
+    if (this.contactForm.value.email === '') {
+      this.toastr.error('', 'El email es obligatorio', {
+        timeOut: 5000
+      })
+    } else if (this.contactForm.value.password === '') {
+      this.toastr.error('', 'La contraseña es obligatoria', {
         timeOut: 5000
       })
     } else {

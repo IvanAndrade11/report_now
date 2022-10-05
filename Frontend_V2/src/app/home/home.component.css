@@ -65,16 +65,6 @@ a {
   margin-bottom: 2rem;
 }
 
-.alert_danger {
-  color: #550101;
-  width: 78%;
-  background-color: #f9a2a2;
-  font-weight: bold;
-  margin: 0.3rem auto;
-  padding: 1rem;
-  border-radius: 1rem;
-}
-
 .login-container-form-input-field {
   display: flex;
   justify-content: center;
