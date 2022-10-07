@@ -1,10 +1,11 @@
 export class User {
-  id?: number;
-  user: string;
-  name: string;
-  email: string;
-  phone: string;
-  password: string;
+  id?: number
+  user: string
+  name: string
+  email: string
+  phone: string
+  password?: string
+  admin?: boolean
 
   constructor(
     user: string,
@@ -13,10 +14,10 @@ export class User {
     phone: string,
     password: string
   ) {
-    this.user = user;
-    this.name = name;
-    this.email = email;
-    this.phone = phone;
-    this.password = password;
+    this.user = user
+    this.name = name
+    this.email = email
+    this.phone = phone
+    this.password = password
   }
 }
