@@ -1,0 +1,49 @@
+h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.admin-cards {
+  padding: 1rem;
+}
+
+.admin-card h3 {
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.admin-card {
+  margin-top: 1.5rem;
+  border-right: 1px solid #4b4b4b;
+  border-bottom: 1px solid #4b4b4b;
+  border-radius: 0.6rem;
+  padding: 0.5rem;
+}
+
+.admin-buttons button i {
+  margin-right: 0.5rem;
+}
+
+.admin-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.admin-buttons p {
+  margin: 0;
+  color: #bfbebe;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .admin-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+}
