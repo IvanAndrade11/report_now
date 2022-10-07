@@ -1,0 +1,239 @@
+<h1><i class="fa-solid fa-user-secret"></i> Report Now Admin</h1>
+
+<div class="container">
+  <!-- BUTTON CREATE USER ADMIN -->
+  <button class="btn btn-light m-4" (click)="loadUsers()">
+    <i class="fa-solid fa-skull"></i> Actualizar
+  </button>
+
+  <!-- TABLE OF USERS -->
+  <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Admin</th>
+        <th scope="col"><i class="fa-solid fa-wrench"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let user of dataUsers">
+        <tr>
+          <th scope="row">{{ user.id }}</th>
+          <td>{{ user.user }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td class="text-center" *ngIf="user.admin === 1; else elseBlock">
+            <i class="fa-solid fa-check"></i>
+          </td>
+          <ng-template #elseBlock>
+            <td class="text-center"><i class="fa-solid fa-xmark"></i></td>
+          </ng-template>
+          <td>
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenu2"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              ></button>
+              <div
+                class="dropdown-menu dropdown-menu-right"
+                aria-labelledby="dropdownMenu2"
+              >
+                <button
+                  class="dropdown-item"
+                  type="button"
+                  data-toggle="modal"
+                  data-target="#modaEditUser"
+                  (click)="setCurrentUser(user)"
+                >
+                  <i class="fa-solid fa-pen-to-square"></i> Editar
+                </button>
+                <button
+                  class="dropdown-item"
+                  type="button"
+                  (click)="actionUser('changePassword')"
+                >
+                  <i class="fa-solid fa-key"></i> Cambiar contraseña
+                </button>
+                <button
+                  class="dropdown-item"
+                  type="button"
+                  data-toggle="modal"
+                  data-target="#modalConfirmDelete"
+                  (click)="setCurrentUser(user)"
+                >
+                  <i class="fa-solid fa-trash"></i> Eliminar
+                </button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <!-- MODAL EDIT USER -->
+  <div
+    class="modal fade"
+    id="modaEditUser"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Editar Usuario ID - {{ currentUser && currentUser.id }}
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true" class="text-light">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="form-group">
+              <label for="user">Usuario</label>
+              <input
+                type="text"
+                class="form-control"
+                id="user"
+                value="{{ currentUser && currentUser.user }}"
+                #user
+              />
+            </div>
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                value="{{ currentUser && currentUser.name }}"
+                #name
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Correo</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                value="{{ currentUser && currentUser.email }}"
+                #email
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Teléfono</label>
+              <input
+                type="text"
+                class="form-control"
+                id="phone"
+                value="{{ currentUser && currentUser.phone }}"
+                #phone
+              />
+            </div>
+            <div class="form-group form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="admin"
+                [checked]="currentUser && currentUser.admin"
+                #admin
+              />
+              <label class="form-check-label" for="admin">Administrador</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            #closeModal
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+            Cancelar
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="
+              actionUser('edit', {
+                id: currentUser && currentUser.id,
+                user: user.value,
+                name: name.value,
+                email: email.value,
+                phone: phone.value,
+                admin: admin.checked
+              })
+            "
+          >
+            Editar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CONFIRM DELETE -->
+  <div
+    class="modal fade"
+    id="modalConfirmDelete"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel2"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2">Confirmación</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true" class="text-light">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            ¿Está seguro que desea eliminar el usuario
+            {{ currentUser && currentUser.user }}?
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            #closeModalDelete
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+            Cancelar
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="actionUser('delete')"
+          >
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
