@@ -16,21 +16,8 @@
             placeholder="Ingrese su usuario"
             name="user"
             formControlName="user"
+            [(ngModel)]="user"
           />
-        </div>
-        <div
-          class="alert_danger"
-          *ngIf="contactForm.get('user')?.touched && contactForm.get('user')?.errors?.['required']"
-        >
-          Este campo es requerido
-        </div>
-        <div
-          class="alert_danger"
-          *ngIf="contactForm.get('user')?.touched && contactForm.get('user')?.errors?.['minlength']"
-        >
-          El nombre de usuario debe ser mayor a
-          {{ contactForm.get('user')?.errors?.['minlength']?.requiredLength}}
-          characteres.
         </div>
       </div>
 
@@ -45,13 +32,8 @@
             placeholder="Ingrese su nombre"
             name="name"
             formControlName="name"
+            [(ngModel)]="name"
           />
-        </div>
-        <div
-          class="alert_danger"
-          *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.errors?.['required']"
-        >
-          Este campo es requerido
         </div>
       </div>
 
@@ -66,13 +48,8 @@
             placeholder="Ingrese su correo"
             name="email"
             formControlName="email"
+            [(ngModel)]="email"
           />
-        </div>
-        <div
-          class="alert_danger"
-          *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['required']"
-        >
-          Este campo es requerido
         </div>
       </div>
 
@@ -87,13 +64,8 @@
             placeholder="Ingrese su celular"
             name="phone"
             formControlName="phone"
+            [(ngModel)]="phone"
           />
-        </div>
-        <div
-          class="alert_danger"
-          *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.errors?.['required']"
-        >
-          Este campo es requerido
         </div>
       </div>
 
@@ -106,28 +78,13 @@
             placeholder="Ingrese su contraseña"
             formControlName="password"
             name="password"
+            [(ngModel)]="password"
           />
         </div>
-        <div
-          class="alert_danger"
-          *ngIf="contactForm.get('password')?.touched && contactForm.get('password')?.errors?.['required']"
-        >
-          Este campo es requerido
-        </div>
-        <div
-          class="alert_danger"
-          *ngIf="contactForm.get('password')?.touched && contactForm.get('password')?.errors?.['minlength']"
-        >
-          La contraseña debe ser mayor a
-          {{ contactForm.get('password')?.errors?.['minlength']?.requiredLength}}
-          characteres.
-        </div>
       </div>
-
-      <button type="submit" class="btn" [disabled]="contactForm.invalid">
-        <a style="text-decoration: none" routerLink="/validate-otp"
-          >Registrarse</a
-        >
+      <button type="submit">
+        <!-- <a routerLink="/user-home">Iniciar Sesión</a> -->
+        Registrarse
       </button>
     </form>
   </div>

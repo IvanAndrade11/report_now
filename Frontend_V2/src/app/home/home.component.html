@@ -14,18 +14,12 @@
           ></i>
           <input
             class="input-field"
-            type="text"
-            placeholder="Ingrese su usuario"
+            type="email"
+            placeholder="Ingrese su email"
             name="email"
             formControlName="email"
             required
           />
-        </div>
-        <div
-          class="alert_danger"
-          *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['required']"
-        >
-          Este campo es requerido
         </div>
       </div>
 
@@ -39,12 +33,6 @@
             placeholder="Ingrese su contraseña"
             name="password"
           />
-        </div>
-        <div
-          class="alert alert_danger"
-          *ngIf="contactForm.get('password')?.touched && contactForm.get('password')?.errors?.['required']"
-        >
-          Este campo es requerido
         </div>
       </div>
 
