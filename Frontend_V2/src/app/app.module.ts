@@ -15,6 +15,7 @@ import { UserHomeComponent } from './user-home/user-home.component'
 import { NoticeComponent } from './notice/notice.component'
 import { NewNoticeComponent } from './new-notice/new-notice.component'
 import { NavbarComponent } from './utils/navbar/navbar.component'
+import { AdminComponent } from './admin/admin.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NavbarComponent } from './utils/navbar/navbar.component'
     UserHomeComponent,
     NoticeComponent,
     NewNoticeComponent,
-    NavbarComponent
+    NavbarComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

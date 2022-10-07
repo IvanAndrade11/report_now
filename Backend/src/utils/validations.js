@@ -1,5 +1,5 @@
 import { sql } from "../bd.js";
-import { encrypt, decrypt } from "../services/crypto.js";
+import { comparePassword } from "../services/crypto.js";
 
 export async function existUser(id) {
   const [query] = await sql.query(
@@ -25,25 +25,12 @@ export function validateInfoUser(data) {
       }
     }
   }
-  return {
-    res: true,
-  };
+  return { res: true };
 }
 
 export async function validatePassword(email, password) {
-  const current = decrypt(password);
   const [user] = await sql.query(
     `SELECT password AS pass FROM users WHERE email = "${email}"`
   );
-
-  if (user[0].pass === current) {
-    return {
-      valid: false,
-      error: "La contraseña no puede ser la misma.",
-    };
-  }
-  return {
-    valid: true,
-    password: encrypt(password, email),
-  };
+  return await comparePassword(password, user[0].pass);
 }
