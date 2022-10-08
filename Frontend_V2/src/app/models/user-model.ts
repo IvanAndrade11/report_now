@@ -21,3 +21,19 @@ export class User {
     this.password = password
   }
 }
+
+export interface DataValidate {
+  msj: string
+  valid: boolean
+  user: UserValidate
+}
+
+export interface UserValidate {
+  id: number
+  name: string
+  user: string
+  email: string
+  phone: string
+  password: string
+  admin: boolean
+}

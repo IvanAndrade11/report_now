@@ -9,15 +9,25 @@ import { UserHomeComponent } from './user-home/user-home.component'
 import { NoticeComponent } from './notice/notice.component'
 import { NewNoticeComponent } from './new-notice/new-notice.component'
 
+import { AuthService } from './guards/auth.service'
+
 const routes: Routes = [
-  { path: 'admin', component: AdminComponent },
   { path: '', component: HomeComponent },
+  { path: 'restablecer', component: RestorePasswordComponent },
   { path: 'registro', component: RegisterComponent },
   { path: 'validate-otp', component: ValidateOtpComponent },
-  { path: 'restablecer', component: RestorePasswordComponent },
-  { path: 'user-home', component: UserHomeComponent },
-  { path: 'notice', component: NoticeComponent },
-  { path: 'new-notice', component: NewNoticeComponent }
+  { path: 'admin', component: AdminComponent, canActivate: [AuthService] },
+  {
+    path: 'user-home',
+    component: UserHomeComponent,
+    canActivate: [AuthService]
+  },
+  { path: 'notice', component: NoticeComponent, canActivate: [AuthService] },
+  {
+    path: 'new-notice',
+    component: NewNoticeComponent,
+    canActivate: [AuthService]
+  }
 ]
 
 @NgModule({

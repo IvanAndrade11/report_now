@@ -7,8 +7,8 @@ import { User } from '../models/user-model'
   providedIn: 'root'
 })
 export class UsersServiceService {
-  // userURL = 'https://reportnow-production.up.railway.app/api/users/'
-  userURL = 'http://localhost:3000/api/users/'
+  userURL = 'https://reportnow-production.up.railway.app/api/users/'
+  //userURL = 'http://localhost:3000/api/users/'
 
   constructor(private httpClient: HttpClient) {}
 
