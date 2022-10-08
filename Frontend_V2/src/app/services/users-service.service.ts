@@ -8,6 +8,7 @@ import { User } from "../models/user-model";
 })
 export class UsersServiceService {
   userURL = "https://reportnow-production.up.railway.app/api/users/";
+  utilsURL = "https://reportnow-production.up.railway.app/api/utils/";
   //userURL = 'http://localhost:3000/api/users/'
 
   constructor(private httpClient: HttpClient) {}
@@ -32,5 +33,8 @@ export class UsersServiceService {
   }
   public deleteUser(id: number | undefined): Observable<any> {
     return this.httpClient.delete<any>(`${this.userURL}${id}`);
+  }
+  public sendMail(email: string | undefined): Observable<any> {
+    return this.httpClient.post<any>(`${this.utilsURL}sendMail`, email);
   }
 }
