@@ -11,7 +11,11 @@ export class UsersServiceService {
   userURL = 'https://reportnow-production.up.railway.app/api/users/'
 =======
   userURL = "https://reportnow-production.up.railway.app/api/users/";
+<<<<<<< HEAD
+  utilsURL = "https://reportnow-production.up.railway.app/api/utils/";
+=======
 >>>>>>> 14d1bed8073e536e929691f81ea5c1cba49917e9
+>>>>>>> 8a310e81fcbf165af36de8f09afb937d9439b1c7
   //userURL = 'http://localhost:3000/api/users/'
 
   constructor(private httpClient: HttpClient) {}
@@ -36,5 +40,8 @@ export class UsersServiceService {
   }
   public deleteUser(id: number | undefined): Observable<any> {
     return this.httpClient.delete<any>(`${this.userURL}${id}`);
+  }
+  public sendMail(email: string | undefined): Observable<any> {
+    return this.httpClient.post<any>(`${this.utilsURL}sendMail`, email);
   }
 }

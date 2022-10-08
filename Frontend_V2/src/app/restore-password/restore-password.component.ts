@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { Router } from '@angular/router'
-import { ToastrService } from 'ngx-toastr'
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
-  selector: 'app-restore-password',
-  templateUrl: './restore-password.component.html',
-  styleUrls: ['./restore-password.component.css']
+  selector: "app-restore-password",
+  templateUrl: "./restore-password.component.html",
+  styleUrls: ["./restore-password.component.css"],
 })
 export class RestorePasswordComponent implements OnInit {
-  contactForm!: FormGroup
+  contactForm!: FormGroup;
 
   constructor(
     private readonly fb: FormBuilder,
@@ -18,20 +18,21 @@ export class RestorePasswordComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.contactForm = this.initForm()
+    this.contactForm = this.initForm();
   }
 
   onSubmit(): void {
-    this.toastr.success('Mensaje enviado', 'Exito', {
-      timeOut: 5000
-    })
-    this.router.navigate([''])
+    console.log(this.contactForm.value.email);
+    // this.toastr.success('Mensaje enviado', 'Exito', {
+    //   timeOut: 5000
+    // })
+    // this.router.navigate([''])
   }
 
   initForm(): FormGroup {
     //Declarar las propiedades que tendrá el formulario
     return this.fb.group({
-      email: ['', [Validators.email, Validators.required]]
-    })
+      email: ["", [Validators.email, Validators.required]],
+    });
   }
 }

@@ -10,7 +10,7 @@ function getProvider() {
     });
 }
 
-export default function sendMail(to, subject, text) {
+export default function sendMailing(to, subject, text) {
     const provider = getProvider();
     var mailOptions = {
         from: 'report.now.mailer@gmail.com',
