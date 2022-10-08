@@ -32,7 +32,6 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(): void {
     this.validateForm()
-    this.createUser()
   }
 
   initForm(): FormGroup {
@@ -67,6 +66,8 @@ export class RegisterComponent implements OnInit {
       this.toastr.error('', 'La contraseña es obligatoria', {
         timeOut: 5000
       })
+    } else {
+      this.createUser()
     }
   }
 
