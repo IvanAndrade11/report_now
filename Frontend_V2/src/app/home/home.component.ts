@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
 import { ToastrService } from 'ngx-toastr'
 import { UsersServiceService } from '../services/users-service.service'
+import { DataService } from '../services/data.service'
+import { DataValidate } from '../models/user-model'
 
 @Component({
   selector: 'app-home',
@@ -16,7 +18,8 @@ export class HomeComponent implements OnInit {
     private readonly fb: FormBuilder,
     private router: Router,
     private toastr: ToastrService,
-    private readonly userService: UsersServiceService
+    private readonly userService: UsersServiceService,
+    private dataService: DataService
   ) {}
 
   ngOnInit(): void {
@@ -24,6 +27,10 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.validateForm()
+  }
+
+  validateForm(): void {
     if (this.contactForm.value.email === '') {
       this.toastr.error('', 'El email es obligatorio', {
         timeOut: 5000
@@ -33,27 +40,41 @@ export class HomeComponent implements OnInit {
         timeOut: 5000
       })
     } else {
-      this.userService
-        .validateUser(
-          this.contactForm.value.email,
-          this.contactForm.value.password
-        )
-        .subscribe(
-          (data) => {
-            this.toastr.success('', 'Bienvenido', {
-              timeOut: 5000
-            })
-            this.router.navigate(['user-home'])
-          },
-          (error) => {
-            console.log(error)
-            this.toastr.error(error.error.error, 'Error', {
-              timeOut: 3000
-            })
-            return
-          }
-        )
+      this.validateUser()
     }
+  }
+
+  validateUser(): void {
+    this.userService
+      .validateUser(
+        this.contactForm.value.email,
+        this.contactForm.value.password
+      )
+      .subscribe(
+        (data) => {
+          this.toastr.success('', 'Bienvenido', {
+            timeOut: 5000
+          })
+          this.initUser(data)
+          this.dataService.rolUser
+            ? this.router.navigate(['admin'])
+            : this.router.navigate(['user-home'])
+        },
+        (error) => {
+          console.log(error)
+          this.toastr.error(error.error.error, 'Error', {
+            timeOut: 3000
+          })
+          return
+        }
+      )
+  }
+
+  initUser(data: DataValidate): void {
+    this.dataService.isLogged = true
+    this.dataService.idUser = data.user.id
+    this.dataService.nombreUser = data.user.name
+    this.dataService.rolUser = data.user.admin
   }
 
   initForm(): FormGroup {
