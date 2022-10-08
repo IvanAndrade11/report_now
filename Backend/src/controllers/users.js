@@ -18,7 +18,7 @@ const controller = {
         error: "El parámetro id usuario debe ser numerico",
       });
     }
-    const exist = await existUser(id)
+    const exist = await existUser(id);
     if (!exist) {
       res.status(500).json({
         error: `El usuario con id ${id} no existe.`,
@@ -91,9 +91,7 @@ const controller = {
         error: `El usuario con id ${id} no existe.`,
       });
     }
-    const [response] = await sql.query(
-      `DELETE FROM users WHERE id = ${id}`
-    );
+    const [response] = await sql.query(`DELETE FROM users WHERE id = ${id}`);
     res.status(200).json(response);
   },
   changePassword: async (req, res) => {
@@ -124,7 +122,7 @@ const controller = {
     const [user] = await sql.query(
       `SELECT * FROM users WHERE email = "${email}"`
     );
-    if(!user[0]){
+    if (!user[0]) {
       res.status(500).json({
         error: `El email ${email} no se encuentra registrado.`,
         valid: false,
@@ -132,17 +130,18 @@ const controller = {
       return;
     }
     const valid = await validatePassword(email, password);
-    if(!valid){
+    if (!valid) {
       res.status(500).json({
-        error: 'Contraseña Incorrecta',
+        error: "Contraseña Incorrecta",
         valid: valid,
       });
       return;
     }
     res.status(200).json({
-      msj: 'Usuario Validado Correctamente',
+      msj: "Usuario Validado Correctamente",
       valid: valid,
-    })
+      user: user[0],
+    });
   },
 };
 
