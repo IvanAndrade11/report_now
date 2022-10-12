@@ -72,8 +72,7 @@ export class HomeComponent implements OnInit {
 
   initUser(data: DataValidate): void {
     this.dataService.isLogged = true
-    this.dataService.idUser = data.user.id
-    this.dataService.nombreUser = data.user.name
+    this.dataService.user = data;
     this.dataService.rolUser = data.user.admin
   }
 
