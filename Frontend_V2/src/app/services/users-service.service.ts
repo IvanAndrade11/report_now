@@ -9,6 +9,10 @@ import { User } from "../models/user-model";
 export class UsersServiceService {
   userURL = "https://reportnow-production.up.railway.app/api/users/";
   utilsURL = "https://reportnow-production.up.railway.app/api/utils/";
+<<<<<<< HEAD
+=======
+  //userURL = 'http://localhost:3000/api/users/';
+>>>>>>> 6e4fd127adeb7225fb2fd47017bbac7ce9ca6237
 
   constructor(private httpClient: HttpClient) {}
 
