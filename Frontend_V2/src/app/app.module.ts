@@ -15,7 +15,8 @@ import { UserHomeComponent } from './user-home/user-home.component'
 import { NoticeComponent } from './notice/notice.component'
 import { NewNoticeComponent } from './new-notice/new-notice.component'
 import { NavbarComponent } from './utils/navbar/navbar.component'
-import { AdminComponent } from './admin/admin.component'
+import { AdminComponent } from './admin/admin.component';
+import { UserProfileComponent } from './user-profile/user-profile.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AdminComponent } from './admin/admin.component'
     NoticeComponent,
     NewNoticeComponent,
     NavbarComponent,
-    AdminComponent
+    AdminComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

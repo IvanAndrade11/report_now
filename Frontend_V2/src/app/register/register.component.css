@@ -95,6 +95,12 @@ a {
   border-radius: 1rem;
 }
 
+@media (max-width: 768px) {
+  .input-field {
+    font-size: 1rem;
+  }
+}
+
 .input-field:focus {
   border: 2px solid #1e90ff;
 }
