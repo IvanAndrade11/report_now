@@ -8,6 +8,7 @@ export class User {
   admin?: boolean
 
   constructor(
+    id: number,
     user: string,
     name: string,
     email: string,
