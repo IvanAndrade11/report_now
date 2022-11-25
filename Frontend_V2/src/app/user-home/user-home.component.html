@@ -2,10 +2,10 @@
 <h1>TOP VERIFICADAS</h1>
 
 <div class="notice-cards">
-  <div class="notice-card" *ngFor="let notice of noticesArray">
-    <h3>{{ notice.titulo }}</h3>
+  <div class="notice-card" *ngFor="let notice of noticias">
+    <h3>{{ notice.title }}</h3>
     <div class="notice-photo">
-      <a routerLink="/notice">
+      <a routerLink="/notice/{{ notice._id }}">
         <img
           src="../../assets/img/17010.jpg"
           alt="Foto de la noticia"
@@ -14,9 +14,6 @@
       </a>
     </div>
     <div class="notice-buttons">
-      <button class="btn btn-primary" (click)="onVerify()">
-        <i class="fa-solid fa-check"></i>Verificar
-      </button>
       <p>{{ notice.likes }} Verificados</p>
     </div>
   </div>

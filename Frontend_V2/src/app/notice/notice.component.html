@@ -1,7 +1,20 @@
 <app-navbar></app-navbar>
 
-<div class="notice">
-  <div class="notice-img">
-    <img src="../../assets/img/notice.jpg" />
+<h2 class="card-title">{{notice.title}}</h2>
+
+<div class="card text-center">
+  <div class="card-body">
+    <div class="notice-author">
+      <p>Publicado el {{notice.createdAt}} por {{authon.name}}</p>
+    </div> 
+    <div class="notice-img">
+      <img class="img-fluid" src="../../assets/img/17010.jpg" alt="" />
+    </div>
+    <br>
+    <p class="card-text">{{notice.description}}</p>
+    <button class="btn btn-primary"><i class="fa-regular fa-thumbs-up" (click)="saveLike()"></i> Verificar</button> {{notice.likes}}
+  </div>
+  <div class="card-footer text-muted">
+    última edición {{notice.updatedAt}}
   </div>
 </div>

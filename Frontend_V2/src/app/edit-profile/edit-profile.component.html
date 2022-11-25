@@ -4,48 +4,40 @@
   <h2>Editar Perfil</h2>
   <form (ngSubmit)="onSubmit()">
     <div class="form-row">
-      <div class="col-md-3 mb-3">
-        <label for="validationDefault04">ID</label>
-        <input
-          type="text"
-          class="form-control"
-          id="validationDefault04"
-          value="{{ user.user.id }}"
-          [(ngModel)]="id"
-        />
-      </div>
       <div class="col-md-4 mb-3">
         <label for="validationDefault01">Usuario</label>
         <input
+          placeholder="{{ userData.user.user }}"
+          name="username"
+          [(ngModel)]="username"
           type="text"
           class="form-control"
           id="validationDefault01"
-          value="{{ user.user.user }}"
-          [(ngModel)]="user"
         />
       </div>
       <div class="col-md-4 mb-3">
-        <label for="validationDefault02">Nombre</label>
-        <input
-          type="text"
-          class="form-control"
-          id="validationDefault02"
-          value="{{ user.user.name }}"
-          [(ngModel)]="name"
-        />
+        <label for="validationDefaultUsername">Nombre</label>
+        <div class="input-group">
+          <input
+            placeholder="{{ userData.user.name }}"
+            name="name"
+            [(ngModel)]="name"
+            type="text"
+            class="form-control"
+            id="validationDefault02"
+          />
+        </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationDefaultUsername">Email</label>
         <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupPrepend2">@</span>
-          </div>
           <input
+            placeholder="{{ userData.user.email }}"
+            name="email"
+            [(ngModel)]="email"
             type="text"
             class="form-control"
             id="validationDefaultUsername"
-            value="{{ user.user.email }}"
-            [(ngModel)]="email"
           />
         </div>
       </div>
@@ -54,39 +46,15 @@
       <div class="col-md-6 mb-3">
         <label for="validationDefault03">Teléfono</label>
         <input
+          placeholder="{{ userData.user.phone }}"
+          name="phone"
+          [(ngModel)]="phone"
           type="text"
           class="form-control"
           id="validationDefault03"
-          value="{{ user.user.phone }}"
-          [(ngModel)]="phone"
         />
       </div>
     </div>
-
-    <div class="col-md-4 mb-3">
-      <label for="validationDefault02">Contraseña</label>
-      <input
-        type="password"
-        class="form-control"
-        id="validationDefault02"
-        value="{{ user.user.password }}"
-        [(ngModel)]="password"
-      />
-    </div>
-    <div class="form-group">
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value=""
-          id="invalidCheck2"
-          required
-        />
-        <label class="form-check-label" for="invalidCheck2">
-          Agree to terms and conditions
-        </label>
-      </div>
-    </div>
-    <button class="btn btn-primary" type="submit">Submit form</button>
+    <button class="btn btn-primary" type="submit">Guardar</button>
   </form>
 </div>

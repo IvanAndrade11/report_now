@@ -30,7 +30,7 @@ const routes: Routes = [
     canActivate: [AuthService]
   },
   {
-    path: 'notice',
+    path: 'notice/:id',
     component: NoticeComponent,
     canActivate: [AuthService]
   },

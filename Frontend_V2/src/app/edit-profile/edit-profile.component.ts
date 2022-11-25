@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { DataService } from '../services/data.service'
-import { User } from '../models/user-model'
+import { UserUpdate } from '../models/user-model'
+import { Router } from '@angular/router'
 import { ToastrService } from 'ngx-toastr'
 import { UsersServiceService } from '../services/users-service.service'
 
@@ -10,8 +11,8 @@ import { UsersServiceService } from '../services/users-service.service'
   styleUrls: ['./edit-profile.component.css']
 })
 export class EditProfileComponent implements OnInit {
-  user: any
-  id: number = 0
+  userData: any
+  id: string = ''
   username: string = ''
   name: string = ''
   email: string = ''
@@ -20,6 +21,7 @@ export class EditProfileComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private userService: UsersServiceService,
+    private router: Router,
     private toastr: ToastrService
   ) {}
 
@@ -28,26 +30,55 @@ export class EditProfileComponent implements OnInit {
   }
 
   getUser(): void {
-    this.user = this.dataService.user
+    this.userData = this.dataService.user
   }
 
   onSubmit(): void {
-    const user = new User(
-      this.id,
-      this.user,
+    const user = new UserUpdate(
       this.username,
+      this.name,
       this.email,
-      this.phone,
-      this.password
+      this.phone
     )
-    this.userService.updateUser(user).subscribe(
+    this.validateForm(user)
+  }
+
+  validateForm(user: UserUpdate): void {
+    if (user.user === '') {
+      this.toastr.error('', 'El usuario es obligatorio', {
+        timeOut: 5000
+      })
+    } else if (user.name === '') {
+      this.toastr.error('', 'El nombre es obligatorio', {
+        timeOut: 5000
+      })
+    } else if (user.email === '') {
+      this.toastr.error('', 'El email es obligatorio', {
+        timeOut: 5000
+      })
+    } else if (user.phone === '') {
+      this.toastr.error('', 'El teléfono es obligatorio', {
+        timeOut: 5000
+      })
+    } else if (user.password === '') {
+      this.toastr.error('', 'La contraseña es obligatoria', {
+        timeOut: 5000
+      })
+    } else {
+      this.updateUser(user)
+    }
+  }
+
+  updateUser(user: UserUpdate): void {
+    this.userService.updateUser(user, this.userData.user._id).subscribe(
       (data) => {
-        this.toastr.success('Usuario actualizado', 'Exito', {
+        this.toastr.success('Actualización Exitosa', 'Exito', {
           timeOut: 3000
         })
+        this.router.navigate(['/user-profile'])
       },
       (error) => {
-        this.toastr.error('Error al actualizar el registro', 'Error', {
+        this.toastr.error('Error al actualizar el usuario', 'Error', {
           timeOut: 3000
         })
       }

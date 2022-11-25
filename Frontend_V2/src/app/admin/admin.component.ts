@@ -33,7 +33,7 @@ export class AdminComponent implements OnInit {
         })
         break
       case 'edit':
-        this.userService.updateUser(user).subscribe(
+        this.userService.updateUser(user, user.id).subscribe(
           () => {
             this.toastr.success(
               `El usuario ${user?.user} ha sido actualizado.`,
