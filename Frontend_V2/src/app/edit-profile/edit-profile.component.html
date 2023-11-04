@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+
+<div class="edit-profile">
+  <h2>Editar Perfil</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault01">Usuario</label>
+        <input
+          placeholder="{{ userData.user.user }}"
+          name="username"
+          [(ngModel)]="username"
+          type="text"
+          class="form-control"
+          id="validationDefault01"
+        />
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefaultUsername">Nombre</label>
+        <div class="input-group">
+          <input
+            placeholder="{{ userData.user.name }}"
+            name="name"
+            [(ngModel)]="name"
+            type="text"
+            class="form-control"
+            id="validationDefault02"
+          />
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefaultUsername">Email</label>
+        <div class="input-group">
+          <input
+            placeholder="{{ userData.user.email }}"
+            name="email"
+            [(ngModel)]="email"
+            type="text"
+            class="form-control"
+            id="validationDefaultUsername"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationDefault03">Teléfono</label>
+        <input
+          placeholder="{{ userData.user.phone }}"
+          name="phone"
+          [(ngModel)]="phone"
+          type="text"
+          class="form-control"
+          id="validationDefault03"
+        />
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Guardar</button>
+  </form>
+</div>

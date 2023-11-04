@@ -15,8 +15,9 @@ import { UserHomeComponent } from './user-home/user-home.component'
 import { NoticeComponent } from './notice/notice.component'
 import { NewNoticeComponent } from './new-notice/new-notice.component'
 import { NavbarComponent } from './utils/navbar/navbar.component'
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './admin/admin.component'
 import { UserProfileComponent } from './user-profile/user-profile.component'
+import { EditProfileComponent } from './edit-profile/edit-profile.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component'
     NewNoticeComponent,
     NavbarComponent,
     AdminComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,

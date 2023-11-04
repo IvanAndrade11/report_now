@@ -1,3 +1,34 @@
 <app-navbar></app-navbar>
 
-<div class="card mx-auto" style="width: 18rem"></div>
+<div class="edit-profile">
+  <h2>Editar Perfil</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationDefault01">Titulo</label>
+        <input
+          placeholder="Ingrese un titulo"
+          name="title"
+          [(ngModel)]="title"
+          type="text"
+          class="form-control"
+          id="validationDefault01"
+        />
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationDefaultUsername">Descripción</label>
+        <div class="input-group">
+          <input
+            placeholder="Ingrese una descripción"
+            name="description"
+            [(ngModel)]="description"
+            type="text"
+            class="form-control"
+            id="validationDefault02"
+          />
+        </div>
+      </div>
+    </div>  
+    <button class="btn btn-primary" type="submit">Guardar</button>
+  </form>
+</div>
